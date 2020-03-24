@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  color: rgb(206, 123, 0);
+}
+
+body {
+  background-color: rgb(37, 11, 41);
+  color: white;
+}
+
+.app-body {
+  width: 50%;
+}
+
+.search-options-outer {
+  margin: 0px;
+  padding: 0px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.search-input {
+  width: 99%;
+  margin-bottom: 3px;
+  padding: 2px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.search-input:focus {
+  outline:0;
+}
+
+.search-option {
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  cursor: pointer;
+  color: black;
+}
+
+.search-option:hover {
+  background-color: lightgray;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: lightgray;
+  border: 3px solid lightgray;
+}
+
+.button-disabled {
+  background-color: gray;
+  color: black;
+  cursor: default;
+  border: 3px solid gray;
+  border-radius: 5px;
+}
+
+.flex {
+  display: flex;
+}
+
+.tc {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.cols2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.cols2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.items-center {
+  justify-items: center;
+}
