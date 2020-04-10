@@ -1,0 +1,13 @@
+.text-input {
+    border: 2px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-title {
+    color: black;
+}
+
+.form-label {
+    color: black;
+}

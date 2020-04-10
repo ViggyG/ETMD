@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 
+//class for displaying options as a user searches
 class SearchOptions extends Component {
     constructor(props) {
+        //initial setup
         super(props)
         this.state = {
             inputText: '',
@@ -9,14 +11,22 @@ class SearchOptions extends Component {
             matchedOptions: [],
             optionSelected: false,
         }
+        console.log(this.props.options)
     }
 
+    //update the options available to the search bar
+    updateOptions = (options) => {
+        this.setState({options: options})
+    }
+
+    //function for handling when a user clicks on an option
     onClick = (value) => {
         this.setState({optionSelected: true});
         this.setState({inputText: value})
         this.props.onChange(value)
     }
 
+    //update the options as the user enters text
     onChange = (e) => {
         const {options} = this.state;
         var value = e.target.value.toLowerCase();
@@ -25,7 +35,7 @@ class SearchOptions extends Component {
 
         this.setState({inputText: value})
         this.setState({optionSelected: false})
-
+        
         if(value) {
 
             var filteredOptions = options.filter((option) => {

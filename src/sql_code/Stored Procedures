@@ -1,0 +1,37 @@
+
+CREATE PROCEDURE `delete_disease_symptoms`(IN iid INT)
+BEGIN
+	DELETE FROM etmddb.disease_symptoms WHERE iid = disease_id;
+END
+
+CREATE PROCEDURE `get_diseases_by_symptom`(IN isymptom_name VARCHAR(255))
+BEGIN
+	SELECT 
+        d.id AS disease_id,
+        d.name AS disease_name, 
+        s.name AS symptom_name, 
+        d.description AS description 
+    FROM etmddb.disease_symptoms 
+    JOIN diseases AS d ON d.id = disease_id
+    JOIN symptoms AS s ON s.id = symptom_id
+    WHERE s.name = isymptom_name;
+END
+
+CREATE PROCEDURE `get_symptoms`()
+BEGIN
+	SELECT * FROM etmddb.symptoms;
+END
+
+CREATE PROCEDURE `create_symptom`(IN iname VARCHAR(255), IN idescription TEXT)
+BEGIN
+	INSERT INTO etmddb.symptoms (name, description) 
+    VALUES (iname, idescription);
+END
+
+CREATE PROCEDURE `create_disease`(IN iname VARCHAR(255), IN idescription TEXT)
+BEGIN
+	INSERT INTO etmddb.diseases (name, description) 
+    VALUES (iname, idescription);
+    
+    SELECT id FROM etmddb.diseases WHERE name = iname;
+END

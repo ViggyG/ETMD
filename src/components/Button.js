@@ -1,5 +1,6 @@
 import React from 'react'
 
+//basic button object
 const Button = ({onClickFunction, title, isEnabled}) => {
     return(
         <p
